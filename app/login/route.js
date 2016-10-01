@@ -20,6 +20,6 @@ export default Ember.Route.extend({
 
   _setUserSession(user) {
     this.controllerFor('application').set('user', user);
-    this.transitionTo('notebooks');
+    this.transitionTo('notebooks', user.get('id'));
   }
 });
