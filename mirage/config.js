@@ -11,7 +11,6 @@ export default function() {
   this.get('notebooks', (schema, request) => {
     const id = request.queryParams.user;
     const user =  schema.users.find(id);
-    //return user.notebooks.all();
     return schema.notebooks.where(user);
   });
 }
