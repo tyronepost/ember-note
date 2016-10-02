@@ -10,7 +10,8 @@ export default function() {
   // notebooks
   this.get('notebooks', (schema, request) => {
     const id = request.queryParams.user;
-    const user =  schema.users.find(id);
-    return schema.notebooks.where(user);
+    return schema.notebooks.where({ userId: id });
   });
+
+  this.post('/notebooks');
 }
