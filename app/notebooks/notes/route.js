@@ -27,7 +27,7 @@ export default Ember.Route.extend({
         });
     },
 
-    deleteNote() {
+    deleteNote(note) {
       let title = note.get('title');
       console.log(`deleting note with title ${title}`);
       note.deleteRecord();
