@@ -25,6 +25,7 @@ export default function() {
     const id = request.queryParams.notebook;
     return schema.notes.where({ notebookId: id });
   });
-
+  this.get('notes/:id');
   this.post('/notes');
+  this.patch('/notes/:id');
 }
