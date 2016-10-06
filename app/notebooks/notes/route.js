@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const { Route } = Ember;
+
+export default Route.extend({
   model(params) {
     return this.store.query('note', { notebook:params.notebook_id });
   },
@@ -12,7 +14,7 @@ export default Ember.Route.extend({
         .then((notebook) => {
           console.log(notebook);
           let title = this.controller.get('title');
-          let note = this.store.createRecord({ 
+          let note = this.store.createRecord('note', { 
             title: title, 
             notebook: notebook
           });
