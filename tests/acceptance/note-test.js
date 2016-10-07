@@ -14,8 +14,11 @@ test('visiting /note', function(assert) {
   fillIn('.title', 'notebook 1');
   click('.add-notebook');
   click('[data-test-id=1]');
+  fillIn('.title', 'note 1');
+  click('.add-note');
+  click('[data-test-note=1]');
 
   andThen(function() {
-    assert.equal(currentURL(), '/notebooks/1/notes/1');
+    assert.equal(currentURL(), '/notebooks/1/notes/1/note/1');
   });
 });

@@ -4,17 +4,15 @@
 <div>
   <div class="col-md-4">
     <div>
-      title: {{input value=title}} <button {{action 'addNote'}}>Add</button>
+      title: {{input class="title" value=title}} <button class="add-note" {{action 'addNote'}}>Add</button>
     </div>
     <div>
       <ul>
         {{#each model as |note|}}
-          <li>
             {{#link-to 'notebooks.notes.note' note.id}}
-              {{note.title}}
+            <li data-test-note={{note.id}}>{{note.title}}</li>
             {{/link-to}}
             <button {{action 'deleteNote' note}}>delete</button>
-          </li>
         {{/each}}
       </ul>
     </div>
