@@ -9,10 +9,14 @@
     <div>
       <ul>
         {{#each model as |note|}}
+          <li>
             {{#link-to 'notebooks.notes.note' note.id}}
-            <li data-test-note={{note.id}}>{{note.title}}</li>
+              <label data-test-note={{note.id}}>{{note.title}}</label>
             {{/link-to}}
             <button {{action 'deleteNote' note}}>delete</button>
+          </li>
+        {{else}}
+          <div>No notes found</div>
         {{/each}}
       </ul>
     </div>
