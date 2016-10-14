@@ -1,0 +1,7 @@
+{{#if session.user}}
+  Hello, {{session.user.name}}
+{{/if}}
+{{#unless session.user}}
+  {{#link-to 'register' class='register'}}register{{/link-to}}
+  {{#link-to 'login' class='login'}}login{{/link-to}}
+{{/unless}}

@@ -19,7 +19,7 @@ export default Ember.Route.extend({
   },
 
   _setUserSession(user) {
-    this.controllerFor('application').set('user', user);
+    this.session.set(user);
     this.transitionTo('notebooks', user.get('id'));
   }
 });

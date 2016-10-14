@@ -11,7 +11,7 @@ export default Ember.Route.extend({
   actions: {
     addNotebook() {
       const title = this.controller.get('title');
-      const user = this.controllerFor('application').get('user');
+      const user = this.session.user;
       const obj = { title: title, user: user };
       const notebook = this.store.createRecord('notebook', obj);
       notebook.save().then(() => {
