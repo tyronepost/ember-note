@@ -1,10 +1,11 @@
 import Ember from 'ember';
+const { Route } = Ember;
 
-export default Ember.Route.extend({
+export default Route.extend({
+
   model(params) {
     const { store } = this;
     const id = params.user_id;
-    console.log(id);
     return store.query('notebook', { user: id });
   },
 
