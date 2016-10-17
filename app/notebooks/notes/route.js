@@ -1,8 +1,8 @@
 import Ember from 'ember';
-import isValidLength from 'ember-note/utils/is-valid-length';
+import ValidationFunctions from 'ember-note/mixins/validation-functions';
 const { Route } = Ember;
 
-export default Route.extend({
+export default Route.extend(ValidationFunctions, {
   model(params) {
     return this.store.query('note', { notebook:params.notebook_id });
   },
@@ -10,7 +10,7 @@ export default Route.extend({
   actions: {
     addNote() {
       let title = this.controller.get('title');
-      let validLength = isValidLength(title, 0, 140);
+      let validLength = this.isValidLength(title, 0, 140);
       if (!validLength) {
         //console.log('Title must be longer than 0 characters and not more than 140');
       } else {
