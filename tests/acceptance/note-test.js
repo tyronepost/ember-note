@@ -14,7 +14,7 @@ test('visiting /note', function(assert) {
   fillIn('.title', 'notebook 1');
   click('.add-notebook');
   click('[data-test-id=1]');
-  fillIn('.title', 'note 1');
+  fillIn('.note-title', 'note 1');
   click('.add-note');
   click('[data-test-note=1]');
 

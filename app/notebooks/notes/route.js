@@ -12,7 +12,7 @@ export default Route.extend(ValidationFunctions, {
       let title = this.controller.get('title');
       let validLength = this.isValidLength(title, 0, 140);
       if (!validLength) {
-        //console.log('Title must be longer than 0 characters and not more than 140');
+        alert('Title must be longer than 0 characters and not more than 140');
       } else {
         const notebookId = this.paramsFor('notebooks.notes').notebook_id;
         this.store.findRecord('notebook', notebookId)
