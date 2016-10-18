@@ -6,18 +6,18 @@ moduleForAcceptance('Acceptance | login');
 test('register and login', function(assert) {
   visit('/');
   click('.register');
-  fillIn('.name', 'sherri');
+  fillIn('.name', 'obiwan@kenobi.org');
   click('.add');
   click('.login');
   andThen(function() {
     assert.equal(currentURL(), '/login');
   });
 
-  fillIn('.name', 'sherri');
+  fillIn('.name', 'obiwan@kenobi.org');
   click('.login_btn');
 
   andThen(function() {
-    const expected = 'Hello, sherri';
+    const expected = 'Hello, obiwan@kenobi.org';
     assert.equal(find('.greeting').text().trim(), expected);
   });
 });

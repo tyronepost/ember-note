@@ -6,10 +6,10 @@ moduleForAcceptance('Acceptance | add notebook');
 test('visiting /add-notebook', function(assert) {
   visit('/');
   click('.register');
-  fillIn('.name', 'tyrone');
+  fillIn('.name', 'obiwan@kenobi.org');
   click('.add');
   click('.login');
-  fillIn('.name', 'tyrone');
+  fillIn('.name', 'obiwan@kenobi.org');
   click('.login_btn');
   fillIn('.title', 'notebook1');
   click('.add-notebook');
