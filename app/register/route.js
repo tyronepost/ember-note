@@ -10,11 +10,11 @@ export default Route.extend(ValidationFunctions, {
       if (this.isValidEmail(name)) {
         let user = this.store.createRecord('user',{ name: name });
         user.save().then(() => {
-          console.log('save successful');
+          this.logger.log('save successful');
           const message = `A new user with the name ${name} was added`;
           controller.set('message', message);
         }, function() {
-          console.log('save failed');
+          this.logger.log('save failed');
         });
       } else {
         alert('invalid email address.');

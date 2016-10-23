@@ -16,11 +16,11 @@ export default Route.extend({
       const obj = { title: title, user: user };
       const notebook = this.store.createRecord('notebook', obj);
       notebook.save().then(() => {
-        console.log('save successful');
+        this.logger.log('save successful');
         this.controller.set('title', null);
         this.refresh();
       }, function() {
-        console.log('save failed');
+        this.logger.log('save failed');
       });
     }
   }
